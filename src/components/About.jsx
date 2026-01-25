@@ -158,8 +158,8 @@ export function About() {
                 className="w-full bg-purple-600 hover:bg-purple-700"
               >
                 <a
-                  href="/files/curriculo-Lanna.pdf"
-                  download="curriculo-Lanna.pdf"
+                  href="/portifolio-Lanna/files/curriculo-Lanna.pdf"
+                  download="Curriculo-Lanna-Maria.pdf"
                   className="inline-flex items-center gap-2"
                 >
                   <Download className="w-5 h-5" />

@@ -205,7 +205,11 @@ export function Hero() {
             variant="outline"
             className="border-purple-400 text-purple-400 hover:bg-purple-600 hover:text-white"
           >
-            <a href="/files/curriculo-Lanna.pdf" download>
+            <a
+              href="/portifolio-Lanna/files/curriculo-Lanna.pdf"
+              download="Curriculo-Lanna-Maria.pdf"
+              type="application/pdf"
+            >
               <Download className="w-4 h-4 mr-2" />
               Baixar CV
             </a>

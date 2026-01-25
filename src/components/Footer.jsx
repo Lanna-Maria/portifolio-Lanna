@@ -20,7 +20,7 @@ export function Footer() {
           <div>
             <h3 className="mb-4">Lanna Maria</h3>
             <p className="text-gray-400">
-              Desenvolvedora FullStack Apaixonada por criar soluções web
+              Desenvolvedora FullStack apaixonada por criar soluções web
               modernas e eficientes.
             </p>
           </div>
@@ -114,8 +114,8 @@ export function Footer() {
                 <Mail className="w-5 h-5" />
               </a>
               <a
-                href="/files/curriculo-Lanna.pdf"
-                download="curriculo-Lanna.pdf"
+                href="/portifolio-Lanna/files/curriculo-Lanna.pdf"
+                download="Curriculo-Lanna-Maria.pdf"
                 className="p-3 bg-gray-900 rounded-lg hover:bg-purple-600 transition-colors inline-flex items-center justify-center"
                 aria-label="Currículo"
               >
