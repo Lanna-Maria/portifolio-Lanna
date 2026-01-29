@@ -15,59 +15,37 @@ export function Hero() {
     'Apaixonada por criar soluções web modernas e eficientes.';
 
   useEffect(() => {
-    let currentIndex = 0;
-    const typingInterval = setInterval(() => {
-      if (currentIndex <= fullText.length) {
-        setDisplayedText(fullText.slice(0, currentIndex));
-        currentIndex++;
-      } else {
-        clearInterval(typingInterval);
+    let textIndex = 0;
+    let roleIndex = 0;
+    let descIndex = 0;
+
+    const interval = setInterval(() => {
+      if (textIndex <= fullText.length) {
+        setDisplayedText(fullText.slice(0, textIndex));
+        textIndex++;
       }
-    }, 100);
 
-    return () => clearInterval(typingInterval);
-  }, []);
+      if (roleIndex <= fullRole.length) {
+        setDisplayedRole(fullRole.slice(0, roleIndex));
+        roleIndex++;
+      }
 
-  useEffect(() => {
-    const timeout = setTimeout(
-      () => {
-        let currentIndex = 0;
-        const typingInterval = setInterval(() => {
-          if (currentIndex <= fullRole.length) {
-            setDisplayedRole(fullRole.slice(0, currentIndex));
-            currentIndex++;
-          } else {
-            clearInterval(typingInterval);
-          }
-        }, 80);
+      if (descIndex <= fullDescription.length) {
+        setDisplayedDescription(fullDescription.slice(0, descIndex));
+        descIndex++;
+      }
 
-        return () => clearInterval(typingInterval);
-      },
-      fullText.length * 100 + 300,
-    );
+      // Para tudo quando terminar
+      if (
+        textIndex > fullText.length &&
+        roleIndex > fullRole.length &&
+        descIndex > fullDescription.length
+      ) {
+        clearInterval(interval);
+      }
+    }, 25); // 👈 velocidade geral (quanto menor, mais rápido)
 
-    return () => clearTimeout(timeout);
-  }, []);
-
-  useEffect(() => {
-    const timeout = setTimeout(
-      () => {
-        let currentIndex = 0;
-        const typingInterval = setInterval(() => {
-          if (currentIndex <= fullDescription.length) {
-            setDisplayedDescription(fullDescription.slice(0, currentIndex));
-            currentIndex++;
-          } else {
-            clearInterval(typingInterval);
-          }
-        }, 30);
-
-        return () => clearInterval(typingInterval);
-      },
-      fullText.length * 100 + 300 + fullRole.length * 80 + 300,
-    );
-
-    return () => clearTimeout(timeout);
+    return () => clearInterval(interval);
   }, []);
 
   const scrollToSection = (id) => {

@@ -75,16 +75,6 @@ export function About() {
               Desenvolvimento de Sistemas e Machine Learning.
             </p>
             <p className="mb-4 text-gray-300">
-              💻Capacitada em Desenvolvimento FullStack pela Residência em TIC
-              20 Capacita Brasil (UECE).
-            </p>
-
-            <p className="mb-4 text-gray-300">
-              💻 Full Stack Developer em formação com ênfase em Frontend, possuo
-              experiência em HTML5, CSS3, Bootstrap 5, JavaScript (React.js,
-              Node.js, Express), Python, SQL e Prisma ORM.
-            </p>
-            <p className="mb-4 text-gray-300">
               🚀 Busco uma oportunidade no mercado de trabalho para aplicar e
               expandir meus conhecimentos, sempre aprendendo e me adaptando às
               constantes evoluções do mundo tech. Acredito que um bom código não
@@ -100,10 +90,6 @@ export function About() {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             {[
-              {
-                label: 'Localização',
-                value: 'Guaraciaba do Norte, Ceará, Brasil',
-              },
               {
                 label: 'Experiência',
                 value:

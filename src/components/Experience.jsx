@@ -31,7 +31,7 @@ export function Experience() {
         'Atuação no desenvolvimento de aplicações web full stack, com foco em boas práticas, arquitetura escalável e integração entre front-end e back-end.',
       achievements: [
         'Desenvolvimento de interfaces responsivas utilizando React, integração de APIs RESTful e manipulação de dados com Axios e Prisma.',
-        'Experiência com bancos de dados relacionais e versionamento de código com Git e GitHub, garantindo colaboração e controle eficiente das entregas.',
+        'Experiência com bancos de dados relacionais, Git e GitHub, atuando em ambientes com metodologias ágeis e colaboração em equipe.',
       ],
     },
     {
