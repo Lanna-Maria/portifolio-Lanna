@@ -17,9 +17,9 @@ export function Header() {
   const navItems = [
     { id: 'inicio', label: 'Início', href: '#inicio' },
     { id: 'sobre', label: 'Sobre', href: '#sobre' },
-    { id: 'skills', label: 'Skills', href: '#skills' },
-    { id: 'projetos', label: 'Projetos', href: '#projetos' },
     { id: 'experiencia', label: 'Experiência', href: '#experiencia' },
+    { id: 'projetos', label: 'Projetos', href: '#projetos' },
+    { id: 'contato', label: 'Contato', href: '#contato' },
   ];
 
   useEffect(() => {
@@ -86,7 +86,7 @@ export function Header() {
                 </div>
               </div>
               <span className="hidden sm:block text-white font-semibold text-lg">
-                Lanna Maria
+                Lanna dev
               </span>
             </motion.a>
 

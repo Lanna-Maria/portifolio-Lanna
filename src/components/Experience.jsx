@@ -105,7 +105,7 @@ export function Experience() {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <Briefcase className="w-6 h-6 text-purple-400" />
-              <h3 className="text-white">Experiência</h3>
+              <h3 className="text-white text-lg font-semibold">Experiência</h3>
             </div>
 
             <div className="space-y-6">
@@ -241,10 +241,24 @@ export function Experience() {
                     transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
                     whileHover={{ x: -10 }}
                   >
-                    <Card className="p-6 border-l-4 border-l-purple-600 bg-gray-900 border-gray-800">
-                      <div className="flex justify-between items-center">
-                        <h4 className="text-white font-medium">{lang.name}</h4>
-                        <span className="text-gray-400">{lang.level}</span>
+                    <Card
+                      className="
+  px-4 py-3
+  bg-gray-900
+  border border-gray-800
+  rounded-xl
+  hover:border-purple-500/50
+  transition
+"
+                    >
+                      <div className="flex items-center justify-between">
+                        <h4 className="text-white text-sm font-medium">
+                          {lang.name}
+                        </h4>
+
+                        <span className="text-purple-400 text-xs font-semibold">
+                          {lang.level}
+                        </span>
                       </div>
                     </Card>
                   </motion.div>

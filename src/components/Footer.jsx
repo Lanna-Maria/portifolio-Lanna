@@ -1,134 +1,146 @@
-import { Github, Linkedin, Mail, Heart, Download } from 'lucide-react';
-
-<a
-  href="/files/curriculo-Lanna.pdf"
-  download="curriculo-Lanna.pdf"
-  className="p-3 bg-gray-900 rounded-lg hover:bg-purple-600 transition-colors inline-flex items-center justify-center"
-  aria-label="Currículo"
->
-  <Download className="w-5 h-5 text-white" />
-</a>;
+import { Github, Linkedin, Mail } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black text-white py-12 border-t border-purple-900">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
-          {/* Sobre */}
-          <div>
-            <h3 className="mb-4">Lanna Maria</h3>
-            <p className="text-gray-400">
-              Desenvolvedora FullStack apaixonada por criar soluções web
-              modernas e eficientes.
-            </p>
-          </div>
+    <footer className="bg-[#062f7a] text-white pt-10 pb-6">
+      <div className="container mx-auto px-6 max-w-7xl">
+        {/* DESKTOP */}
+        <div className="hidden md:flex items-center justify-between">
+          {/* Espaço vazio à esquerda */}
+          <div className="w-32" />
 
-          {/* Links Rápidos */}
-          <div>
-            <h3 className="mb-4">Links Rápidos</h3>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="#sobre"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Sobre
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#skills"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Habilidades Técnicas
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#projetos"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Projetos
-                </a>
-              </li>
-
-              <li>
-                <a
-                  href="#experiencia"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Experiência
-                </a>
-              </li>
-
-              {/* LATTES */}
-              <li>
-                <a
-                  href="https://lattes.cnpq.br/7989926813407096"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-purple-400 transition-colors"
-                >
-                  Currículo Lattes
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Redes Sociais */}
-          <div>
-            <h3 className="mb-4">Entre em contato</h3>
-            <p className="text-gray-400">
-              Se tiver dúvidas, oportunidades ou quiser colaborar, envie um
-              e-mail ou baixe meu currículo.
-            </p>
-            <br></br>
-            <div className="flex gap-4">
+          {/* Links centrais */}
+          <nav className="flex gap-8 text-sm">
+            {[
+              { href: '#inicio', label: 'Início' },
+              { href: '#sobre', label: 'Sobre' },
+              { href: '#experiencia', label: 'Experiência' },
+              { href: '#projetos', label: 'Projetos' },
+              { href: '#contato', label: 'Contato' },
+            ].map((link) => (
               <a
-                href="https://github.com/Lanna-Maria"
+                key={link.href}
+                href={link.href}
+                className="
+                  relative transition-all duration-300
+                  hover:text-purple-300
+                  after:absolute after:left-0 after:-bottom-1
+                  after:h-[2px] after:w-0 after:bg-purple-400
+                  after:transition-all after:duration-300
+                  hover:after:w-full
+                "
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          {/* Ícones */}
+          <div className="flex gap-4">
+            {[
+              {
+                href: 'https://github.com/Lanna-Maria',
+                icon: Github,
+                label: 'GitHub',
+              },
+              {
+                href: 'https://www.linkedin.com/in/lannamaria/',
+                icon: Linkedin,
+                label: 'LinkedIn',
+              },
+              {
+                href: 'mailto:lannamarya2016@gmail.com',
+                icon: Mail,
+                label: 'Email',
+              },
+            ].map(({ href, icon: Icon, label }) => (
+              <a
+                key={label}
+                href={href}
                 target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-gray-900 rounded-lg hover:bg-purple-600 transition-colors"
-                aria-label="GitHub"
+                aria-label={label}
+                className="
+                  p-3 border border-white/30 rounded-lg
+                  transition-all duration-300
+                  hover:bg-purple-600
+                  hover:border-purple-400
+                  hover:scale-110
+                  hover:shadow-lg hover:shadow-purple-500/30
+                  active:scale-95
+                "
               >
-                <Github className="w-5 h-5" />
+                <Icon className="w-5 h-5" />
               </a>
-              <a
-                href="https://www.linkedin.com/in/lannamaria/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-3 bg-gray-900 rounded-lg hover:bg-purple-600 transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="mailto:lannamarya2016@gmail.com"
-                className="p-3 bg-gray-900 rounded-lg hover:bg-purple-600 transition-colors"
-                aria-label="Email"
-              >
-                <Mail className="w-5 h-5" />
-              </a>
-              <a
-                href="/portifolio-Lanna/files/curriculo-Lanna.pdf"
-                download="Curriculo-Lanna-Maria.pdf"
-                className="p-3 bg-gray-900 rounded-lg hover:bg-purple-600 transition-colors inline-flex items-center justify-center"
-                aria-label="Currículo"
-              >
-                <Download className="w-5 h-5 text-white" />
-              </a>
-            </div>
+            ))}
           </div>
         </div>
 
-        <div className="border-t border-purple-900 pt-8 text-center text-gray-400">
-          <p className="flex items-center justify-center gap-2">
-            Feito por Lanna Maria © {currentYear}
-          </p>
+        {/* MOBILE */}
+        <div className="md:hidden flex flex-col items-center gap-6 text-sm">
+          <nav className="flex flex-wrap justify-center gap-6">
+            {[
+              { href: '#inicio', label: 'Início' },
+              { href: '#sobre', label: 'Sobre' },
+              { href: '#experiencia', label: 'Experiência' },
+              { href: '#projetos', label: 'Projetos' },
+              { href: '#contato', label: 'Contato' },
+            ].map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="
+                  transition-colors duration-300
+                  hover:text-purple-300
+                  active:text-purple-400
+                "
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          <div className="flex gap-6">
+            {[
+              {
+                href: 'https://github.com/Lanna-Maria',
+                icon: Github,
+                label: 'GitHub',
+              },
+              {
+                href: 'https://www.linkedin.com/in/lannamaria/',
+                icon: Linkedin,
+                label: 'LinkedIn',
+              },
+              {
+                href: 'mailto:lannamarya2016@gmail.com',
+                icon: Mail,
+                label: 'Email',
+              },
+            ].map(({ href, icon: Icon, label }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                aria-label={label}
+                className="
+                  p-3 border border-white/30 rounded-xl
+                  transition-all duration-300
+                  hover:bg-purple-600
+                  hover:scale-110
+                  active:scale-95
+                "
+              >
+                <Icon className="w-5 h-5" />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* COPYRIGHT */}
+        <div className="border-t border-purple-900 mt-10 pt-6 text-center text-gray-300 text-sm">
+          © {currentYear} Lanna Maria
         </div>
       </div>
     </footer>

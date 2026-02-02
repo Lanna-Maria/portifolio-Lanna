@@ -6,44 +6,23 @@ import perfil from '../components/assets/img/perfil.png';
 
 export function Hero() {
   const [displayedText, setDisplayedText] = useState('');
-  const [displayedRole, setDisplayedRole] = useState('');
-  const [displayedDescription, setDisplayedDescription] = useState('');
 
   const fullText = 'Lanna Maria';
-  const fullRole = 'Desenvolvedora Full Stack';
+  const fullRole = 'Desenvolvedora Full Stack Júnior';
   const fullDescription =
-    'Apaixonada por criar soluções web modernas e eficientes.';
+    'Focada em construir soluções completas, desde o back-end até a interface do usuário.';
 
   useEffect(() => {
     let textIndex = 0;
-    let roleIndex = 0;
-    let descIndex = 0;
 
     const interval = setInterval(() => {
       if (textIndex <= fullText.length) {
         setDisplayedText(fullText.slice(0, textIndex));
         textIndex++;
-      }
-
-      if (roleIndex <= fullRole.length) {
-        setDisplayedRole(fullRole.slice(0, roleIndex));
-        roleIndex++;
-      }
-
-      if (descIndex <= fullDescription.length) {
-        setDisplayedDescription(fullDescription.slice(0, descIndex));
-        descIndex++;
-      }
-
-      // Para tudo quando terminar
-      if (
-        textIndex > fullText.length &&
-        roleIndex > fullRole.length &&
-        descIndex > fullDescription.length
-      ) {
+      } else {
         clearInterval(interval);
       }
-    }, 25); // 👈 velocidade geral (quanto menor, mais rápido)
+    }, 60);
 
     return () => clearInterval(interval);
   }, []);
@@ -100,12 +79,10 @@ export function Hero() {
           </div>
         </motion.div>
 
-        {/* Título com mãozinha */}
+        {/* Título com digitação */}
         <motion.h1
-          className="mb-4 min-h-[1.2em] flex items-center justify-center gap-2"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
+          style={{ fontSize: 'clamp(1.8rem, 2.5vw, 3.5rem)' }}
+          className="mb-6 flex items-center justify-center gap-3 font-extrabold tracking-tight"
         >
           <motion.span
             className="inline-block"
@@ -126,40 +103,22 @@ export function Hero() {
 
         {/* Cargo */}
         <motion.h2
-          className="mb-6 text-gray-300 min-h-[1.2em]"
+          className="mb-4 text-gray-300 text-lg sm:text-xl md:text-2xl lg:text-3xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
         >
-          {displayedRole}
-          <span
-            className={
-              displayedRole.length < fullRole.length
-                ? 'animate-pulse'
-                : 'opacity-0'
-            }
-          >
-            |
-          </span>
+          {fullRole}
         </motion.h2>
 
         {/* Descrição */}
         <motion.p
-          className="mb-8 text-gray-400 max-w-2xl mx-auto min-h-[3em]"
+          className="mb-8 text-gray-400 max-w-3xl mx-auto text-base sm:text-lg md:text-xl leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
         >
-          {displayedDescription}
-          <span
-            className={
-              displayedDescription.length < fullDescription.length
-                ? 'animate-pulse'
-                : 'opacity-0'
-            }
-          >
-            |
-          </span>
+          {fullDescription}
         </motion.p>
 
         {/* Botões */}

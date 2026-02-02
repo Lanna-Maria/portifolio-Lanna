@@ -213,6 +213,37 @@ export function Projects() {
           ))}
         </div>
       </div>
+      {/* ESPAÇADOR */}
+      <div className="h-32 md:h-40 lg:h-48" />
+      <h3 className="text-white text-sm font-medium mb-6 text-center">
+        Interessado em ver mais do meu trabalho?
+      </h3>
+
+      <div className="flex justify-center">
+        <a
+          href="https://github.com/Lanna-Maria"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+      inline-flex w-fit
+      items-center gap-2
+      px-3 py-1.5
+      bg-gray-800
+      border border-gray-700
+      rounded-lg
+      text-white text-xs
+      transition-all duration-300
+      hover:bg-purple-600
+      hover:border-purple-500
+      hover:shadow-md
+      hover:shadow-purple-600/30
+      hover:scale-105
+    "
+        >
+          <Github className="w-4 h-4" />
+          <span className="leading-tight">Ver todos no GitHub</span>
+        </a>
+      </div>
     </section>
   );
 }
