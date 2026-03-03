@@ -24,7 +24,7 @@ export function Experience() {
 
   const experiences = [
     {
-      company: 'Residência em TIC 20 – Capacita Brasil (UECE)',
+      company: 'Robótica Sustentável',
       position: 'Estágio em Desenvolvimento Full Stack',
       period: 'Out 2025 - Dez 2025',
       description:
